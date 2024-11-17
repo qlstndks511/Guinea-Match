@@ -1,0 +1,131 @@
+body {
+    background-color: #8ACDD7;
+  }
+  
+  .full-width-bottom-image {
+    position: fixed; /* Fixes the image at the bottom */
+    bottom: 0; /* Positions the image at the bottom of the viewport */
+    left: 0; /* Aligns the image to the left edge */
+    width: 100%; /* Makes the image take the full width of the viewport */
+    z-index: 1;/* Ensures the image stays behind other elements if necessary */
+  }
+  
+
+  .full-width-bottom-image {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+/* Right piggy (flipped to face left) */
+.right-piggy {
+    position: fixed;
+    bottom: 0;
+    left: 200px;
+    width: 10%;
+    z-index: 1;
+    animation: jump 2s ease-in-out infinite, hover-left-right 3s ease-in-out infinite;
+  }
+  
+  /* Left piggy (flipped to face right) */
+  .left-piggy {
+    position: fixed;
+    bottom: 0;
+    right: 400px;
+    width: 10%;
+    z-index: 1;
+    animation: jump 2s ease-in-out infinite, hover-left-right 4s ease-in-out infinite;
+  }
+  
+
+  
+  /* Keyframes for jumping animation */
+  @keyframes jump {
+    0% {
+      bottom: 0;
+    }
+    25% {
+      bottom: 30px; /* Jumping up */
+    }
+    50% {
+      bottom: 0;
+    }
+    75% {
+      bottom: 30px; /* Jumping up again */
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+  
+
+@keyframes riseUp {
+    0% {
+        transform: translateY(100%); /* Start off the screen (bottom) */
+        opacity: 0; /* Invisible */
+    }
+    100% {
+        transform: translateY(0); /* End at original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+.left-image, .right-image {
+    position: fixed;
+    bottom: 0;
+    width: auto; /* Adjust width to your needs */
+    height: auto; /* Adjust height if necessary */
+    z-index: 1; /* Ensure these images are above the grass image if needed */
+    animation: riseUp 2s ease-out forwards;
+}
+
+.left-cloud{
+    position: fixed;
+    bottom: 150px;
+    width: 30%; /* Adjust width to your needs */
+    height: auto; /* Adjust height if necessary */
+    z-index: 1; /* Ensure these images are above the grass image if needed */
+    left: 0; /* Positions it at the very left */
+    animation: floatClouds 5s ease-in-out infinite;
+}
+
+.right-cloud{
+    position: fixed;
+    bottom: 300px;
+    width: 30%; /* Adjust width to your needs */
+    height: auto; /* Adjust height if necessary */
+    z-index: 1; /* Ensure these images are above the grass image if needed */
+    right: 0; 
+    animation: floatCloudsRight 7s ease-in-out infinite;
+}
+
+@keyframes floatClouds {
+    0% {
+        bottom: 150px; /* Starting position for the left cloud */
+    }
+    50% {
+        bottom: 200px; /* Cloud moves up */
+    }
+    100% {
+        bottom: 150px; /* Cloud moves back down */
+    }
+}
+
+@keyframes floatCloudsRight {
+    0% {
+        bottom: 300px; /* Starting position for the right cloud */
+    }
+    50% {
+        bottom: 350px; /* Cloud moves up */
+    }
+    100% {
+        bottom: 300px; /* Cloud moves back down */
+    }
+}
+.left-image {
+    left: 0; /* Positions it at the very left */
+}
+
+.right-image {
+    right: 0; /* Positions it at the very right */
+}

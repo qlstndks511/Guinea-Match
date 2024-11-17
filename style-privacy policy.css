@@ -1,0 +1,109 @@
+#title {
+    height: 600px; /* Adjust the height as needed */
+  }
+  
+  .custom-title {
+    font-size: 3rem; /* Larger font size for the title */
+    text-align: left; /* Align text to the left */
+    margin-left: 100px; /* Adjust the left margin to move it slightly to the left */
+    margin-bottom: 100px; /* Remove bottom margin to control the spacing */
+  }
+  
+  .container {
+    height: 10%;
+  }
+  
+  .row {
+    height: 10%; /* Ensures the row takes up the full height of the section */
+  }
+  
+  .col-lg-6 {
+    display: flex;
+    align-items: center; /* Vertically center the text */
+    justify-content: flex-start; /* Align text to the left */
+  }
+  
+  .gradient-background {
+    background: linear-gradient(300deg, #8ACDD7, #f9f9e0, #FF90BC);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .speech-bubble {
+    position: relative; /* To position the triangle "tail" */
+    background-color: #8ACDD7; /* Light background color */
+    padding: 15px; /* Padding for the content inside */
+    border-radius: 15px; /* Rounded corners */
+    max-width: 600px; /* Maximum width of the bubble */
+    font-size: 30px; /* Text size */
+    opacity: 0; /* Start with opacity 0 (invisible) */
+    
+    /* Add floating and fade-in animation */
+    animation: float 4s ease-in-out infinite, fadeIn 2s ease forwards;
+    
+    /* Align text to the left */
+    text-align: left;
+  }
+  
+  /* Triangle tail on the right side */
+  .speech-bubble:after {
+    content: ''; /* Content for the triangle */
+    position: absolute;
+    top: 50%; /* Position the triangle in the middle vertically */
+    right: -15px; /* Position it outside the bubble */
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent; /* Left part of the triangle */
+    border-right: 15px solid transparent; /* Right part of the triangle */
+    border-top: 15px solid transparent; /* Make top invisible */
+    border-bottom: 15px solid #8ACDD7; /* The actual tail color (on the right side) */
+    transform: translateY(-50%); /* Center it vertically relative to the bubble */
+  }
+  
+
+  .containers {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 50vh; /* Full viewport height */
+  }
+/* Fade-in animation to make the bubble visible */
+@keyframes fadeIn {
+    0% {
+      opacity: 0; /* Initially transparent */
+    }
+    100% {
+      opacity: 1; /* Fully visible */
+    }
+  }
+
+  /* Image styles */
+.image-rise {
+    position: relative; /* Allow transformation */
+    animation: riseUp 2s ease-out forwards; /* Apply the animation */
+  }
+  
+  /* Keyframes to animate image rising from bottom */
+  @keyframes riseUp {
+    0% {
+      transform: translateY(100px); /* Start position (100px below the original) */
+      opacity: 0; /* Start with image invisible */
+    }
+    100% {
+      transform: translateY(0); /* End at the original position */
+      opacity: 1; /* Fully visible */
+    }
+  }
+  
